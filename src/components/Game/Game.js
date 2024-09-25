@@ -5,6 +5,7 @@ import Table from '../Table/Table';
 import { useState } from 'react';
 import HappyBanner from '../HappyBanner';
 import SadBanner from '../SadBanner/SadBanner';
+import Keyboard from '../Keyboard/Keyboard';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -23,6 +24,7 @@ function Game() {
   return <><Table guesses={guesses}/><Input setGuesses={setGuesses} answer={answer} isEnd={isEnd}/>
   {isHappy && <HappyBanner guessesCount={guessesCount}/>}
   {isSad && <SadBanner answer={answer}/>}
+  <Keyboard  guesses={guesses}/>
   </>;
 }
 

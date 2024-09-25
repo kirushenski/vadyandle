@@ -230,3 +230,40 @@ h1 {
     transform: translateY(0%);
   }
 }
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.keyboardRow {
+  display: flex;
+  gap: 4px;
+}
+
+.key {
+  block-size: 48px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-gray-900);
+  border-radius: 5px;
+  font-size: 1.25rem;
+}
+
+.key.correct {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.key.incorrect {
+  background-color: var(--color-gray-300);
+  color: white;
+}
+
+.key.misplaced {
+  background-color: var(--color-warning);
+  color: white;
+}

@@ -29,7 +29,7 @@ function Input({setGuesses, answer,isEnd}) {
 
   return <form className="guess-input-wrapper" onSubmit={handleSubmit}>
   <label htmlFor="guess-input">Enter guess:</label>
-  <input id="guess-input" type="text" value={guess} onChange={handleGuessChange} onKeyDown={handleKeyDown} maxLength={WORD_LENGTH} disabled={isEnd}/>
+  <input id="guess-input" type="text" value={guess} onChange={handleGuessChange} onKeyDown={handleKeyDown} maxLength={WORD_LENGTH} disabled={isEnd} autoFocus/>
 </form>;
 }
 
