@@ -21,7 +21,7 @@ function Input({setGuesses}) {
   }
 
   const handleKeyDown = (e) => {
-    if (!/\w/i.test(e.key) && !SPECIAL_KEYS.includes(e.key)) {
+    if (!/[a-z]/i.test(e.key) && !SPECIAL_KEYS.includes(e.key)) {
       e.preventDefault()
     }
   }
