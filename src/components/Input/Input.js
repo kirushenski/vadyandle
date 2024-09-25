@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { SPECIAL_KEYS, WORD_LENGTH } from '../../constants';
+import { checkGuess } from '../../game-helpers';
 
-function Input({setGuesses}) {
+function Input({setGuesses, answer}) {
   const [guess, setGuess] = useState('')
 
   const handleSubmit = (e) => {
@@ -11,7 +12,7 @@ function Input({setGuesses}) {
 
     setGuess('')
 
-    setGuesses(guesses => [...guesses, guess])
+    setGuesses(guesses => [...guesses, checkGuess(guess, answer)])
   }
 
   const handleGuessChange = (e) => {

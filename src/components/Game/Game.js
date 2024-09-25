@@ -12,7 +12,7 @@ console.info({ answer });
 function Game() {
   const [guesses, setGuesses] = useState([])
 
-  return <><Table guesses={guesses} /><Input setGuesses={setGuesses}/></>;
+  return <><Table guesses={guesses}/><Input setGuesses={setGuesses} answer={answer}/></>;
 }
 
 export default Game;
