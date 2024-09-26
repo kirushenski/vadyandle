@@ -6,9 +6,11 @@ import { useState } from 'react'
 import HappyBanner from '../HappyBanner'
 import SadBanner from '../SadBanner/SadBanner'
 import Keyboard from '../Keyboard/Keyboard'
+import { checkGuess } from '../../game-helpers'
 
-const useGuesses = () => {
+const useGuesses = (answer) => {
   const [guesses, setGuesses] = useState([])
+  const validatedGuesses = guesses.map((guess) => checkGuess(guess, answer))
 
   const guessesCount = guesses.length
 
@@ -18,28 +20,28 @@ const useGuesses = () => {
   const isSad = !isCorrectAnswer && guessesCount === 6
   const isEnd = isHappy || isSad
 
-  return { guesses, setGuesses, guessesCount, isHappy, isSad, isEnd }
+  return { validatedGuesses, setGuesses, guessesCount, isHappy, isSad, isEnd }
 }
 function Game() {
   const [answer, setAnswer] = useState(() => sample(WORDS).value)
 
-  const { guesses, setGuesses, guessesCount, isHappy, isSad, isEnd } = useGuesses()
+  const { validatedGuesses, setGuesses, guessesCount, isHappy, isSad, isEnd } =
+    useGuesses(answer)
+
+  const handleRestart = () => {
+    setAnswer(sample(WORDS).value)
+    setGuesses([])
+  }
 
   return (
     <>
-      <Table guesses={guesses} />
-      <Input setGuesses={setGuesses} answer={answer} isEnd={isEnd} />
+      <Table validatedGuesses={validatedGuesses} />
+      <Input setGuesses={setGuesses} isEnd={isEnd} />
+      <Keyboard validatedGuesses={validatedGuesses} />
       {isHappy && (
-        <HappyBanner
-          guessesCount={guessesCount}
-          setAnswer={setAnswer}
-          setGuesses={setGuesses}
-        />
+        <HappyBanner guessesCount={guessesCount} handleRestart={handleRestart} />
       )}
-      {isSad && (
-        <SadBanner answer={answer} setAnswer={setAnswer} setGuesses={setGuesses} />
-      )}
-      <Keyboard guesses={guesses} />
+      {isSad && <SadBanner answer={answer} handleRestart={handleRestart} />}
     </>
   )
 }

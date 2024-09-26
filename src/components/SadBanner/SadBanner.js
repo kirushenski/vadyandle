@@ -1,20 +1,11 @@
 import React from 'react'
-import { sample } from '../../utils'
-import { WORDS } from '../../data'
+import Banner from '../Banner'
 
-function SadBanner({ answer, setAnswer, setGuesses }) {
-  const handleRestart = () => {
-    setAnswer(sample(WORDS).value)
-    setGuesses([])
-  }
-
+function SadBanner({ answer, handleRestart }) {
   return (
-    <div className="sad banner">
-      <p>
-        Cорре, нужно было отвечать <strong>{answer}</strong> 🤷🏿‍♂️
-      </p>
-      <button onClick={handleRestart}>Ещё трай</button>
-    </div>
+    <Banner status="sad" handleRestart={handleRestart}>
+      Cорре, нужно было отвечать <strong>{answer}</strong> 🤷🏿‍♂️
+    </Banner>
   )
 }
 
