@@ -14,7 +14,7 @@ const useGuesses = (answer) => {
 
   const guessesCount = guesses.length
 
-  const lastGuess = guesses.at(-1)
+  const lastGuess = validatedGuesses.at(-1)
   const isCorrectAnswer = lastGuess?.every(({ status }) => status === 'correct') ?? false
   const isHappy = isCorrectAnswer && guessesCount <= 6
   const isSad = !isCorrectAnswer && guessesCount === 6
