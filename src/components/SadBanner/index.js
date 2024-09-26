@@ -1,2 +1,2 @@
-export * from './SadBanner';
-export { default } from './SadBanner';
+export * from './SadBanner'
+export { default } from './SadBanner'

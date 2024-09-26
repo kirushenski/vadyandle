@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-function GameOverBanner({type}) {
-  return <div></div>;
+function GameOverBanner({ type }) {
+  return <div></div>
 }
 
-export default GameOverBanner;
+export default GameOverBanner

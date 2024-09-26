@@ -1,2 +1,2 @@
-export * from './Key';
-export { default } from './Key';
+export * from './Key'
+export { default } from './Key'

@@ -1,2 +1,2 @@
-export * from './Keyboard';
-export { default } from './Keyboard';
+export * from './Keyboard'
+export { default } from './Keyboard'

@@ -1,2 +1,2 @@
-export * from './HappyBanner';
-export { default } from './HappyBanner';
+export * from './HappyBanner'
+export { default } from './HappyBanner'
