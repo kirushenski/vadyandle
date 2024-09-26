@@ -4,13 +4,13 @@ import { WORDS } from '../../data';
 
 function SadBanner({answer, setAnswer, setGuesses}) {
   const handleRestart = () => {
-    setAnswer(sample(WORDS))
+    setAnswer(sample(WORDS).value)
     setGuesses([])
   }
 
   return <div className="sad banner">
-  <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
-  <button onClick={handleRestart}>Restart game</button>
+  <p>Cорре, нужно было отвечать <strong>{answer}</strong> 🤷🏿‍♂️</p>
+  <button onClick={handleRestart}>Ещё трай</button>
 </div>;
 }
 

@@ -22,7 +22,7 @@ const useGuesses = () => {
   return { guesses, setGuesses, guessesCount, isHappy, isSad, isEnd}
 }
 function Game() {
-  const [answer, setAnswer] = useState(() => sample(WORDS))
+  const [answer, setAnswer] = useState(() => sample(WORDS).value)
 
   const {guesses, setGuesses, guessesCount, isHappy, isSad, isEnd} = useGuesses()
 

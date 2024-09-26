@@ -22,13 +22,13 @@ function Input({setGuesses, answer,isEnd}) {
   }
 
   const handleKeyDown = (e) => {
-    if (!/[a-z]/i.test(e.key) && !SPECIAL_KEYS.includes(e.key)) {
+    if (!/[а-яё]/i.test(e.key) && !SPECIAL_KEYS.includes(e.key)) {
       e.preventDefault()
     }
   }
 
   return <form className="guess-input-wrapper" onSubmit={handleSubmit}>
-  <label htmlFor="guess-input">Enter guess:</label>
+  <label htmlFor="guess-input">Вводи сюда:</label>
   <input id="guess-input" type="text" value={guess} onChange={handleGuessChange} onKeyDown={handleKeyDown} maxLength={WORD_LENGTH} disabled={isEnd} autoFocus/>
 </form>;
 }

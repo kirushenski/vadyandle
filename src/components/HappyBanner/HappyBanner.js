@@ -4,15 +4,15 @@ import { WORDS } from '../../data';
 
 function HappyBanner({guessesCount, setAnswer, setGuesses}) {
   const handleRestart = () => {
-    setAnswer(sample(WORDS))
+    setAnswer(sample(WORDS).value)
     setGuesses([])
   }
 
   return <div className="happy banner">
   <p>
-    <strong>Congratulations!</strong> Got it in <strong>{guessesCount} guesses</strong>.
+    <strong>Молорик!</strong> Отгадал с <strong>{guessesCount} {guessesCount === 1 ? 'попытки' : 'попыток'}</strong>.
   </p>
-  <button onClick={handleRestart}>Restart game</button>
+  <button onClick={handleRestart}>Круто, роллим</button>
 </div>;
 }
 
