@@ -1,25 +1,17 @@
-/*
-  Theme and global variables
-*/
-html {
+:root {
   overflow-y: scroll;
 
   --game-spacing: 32px;
   --header-height: 4rem;
 
-  --color-success: hsl(150deg 70% 30%);
-  --color-warning: hsl(50deg 100% 30%);
-  --color-error: hsl(0deg 70% 45%);
-  --color-gray-100: hsl(0deg 0% 10%);
-  --color-gray-300: hsl(0deg 0% 25%);
-  --color-gray-500: hsl(0deg 0% 50%);
-  --color-gray-700: hsl(0deg 0% 75%);
-  --color-gray-900: hsl(0deg 0% 90%);
+  --color-green: hsl(79.61deg 99.03% 40.59%);
+  --color-blue: hsl(197.38deg 97.27% 43.14%);
+  --color-red: hsl(359.43deg 100% 41.37%);
+  --color-light-red: hsl(0deg 99.21% 49.61%);
+  --color-gray: hsl(27.69deg 5.58% 54.31%);
+  --color-light-gray: hsl(0deg 0% 90%);
 }
 
-/*
-  Custom styles
-*/
 body {
   font-family: sans-serif;
 }
@@ -49,8 +41,8 @@ button {
 header {
   display: flex;
   height: var(--header-height);
-  border-bottom: 1px solid var(--color-gray-700);
-  color: var(--color-gray-300);
+  border-bottom: 1px solid black;
+  color: black;
 }
 
 header .side {
@@ -102,7 +94,7 @@ h1 {
   display: grid;
   place-content: center;
   aspect-ratio: 1 / 1;
-  border: 2px solid var(--color-gray-700);
+  border: 2px solid var(--color-gray);
   border-radius: var(--radius);
   font-size: 2rem;
 }
@@ -125,19 +117,19 @@ h1 {
 }
 
 .cell.correct {
-  background: var(--color-success);
-  border-color: var(--color-success);
-  color: white;
+  background: var(--color-green);
+  border-color: var(--color-green);
+  color: black;
 }
 .cell.incorrect {
-  background: var(--color-gray-300);
-  border-color: var(--color-gray-300);
-  color: white;
+  background: var(--color-gray);
+  border-color: var(--color-gray);
+  color: black;
 }
 .cell.misplaced {
-  background: var(--color-warning);
-  border-color: var(--color-warning);
-  color: white;
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+  color: var(--color-red);
 }
 
 .guess-input-wrapper {
@@ -155,7 +147,7 @@ h1 {
   display: block;
   width: 100%;
   font-size: 2rem;
-  border: 2px solid var(--color-gray-300);
+  border: 2px solid black;
   border-radius: 4px;
   padding: 8px 16px;
   outline-offset: 4px;
@@ -177,11 +169,11 @@ h1 {
 }
 
 .happy.banner {
-  background: var(--color-success);
-  color: white;
+  background: var(--color-green);
+  color: black;
 }
 .sad.banner {
-  background: var(--color-error);
+  background: var(--color-red);
   color: white;
 }
 
@@ -196,32 +188,6 @@ h1 {
   border: 0;
 }
 
-/*
-  Modal styles
-
-  HACK: I'm doing this in a quick and dirty way.
-  Later in the course, we'll see my preferred way of building
-  modals in React.
-*/
-[data-reach-dialog-content] {
-  position: relative;
-  border-radius: 8px;
-  padding: 24px 32px;
-}
-.modal-close-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 16px;
-  cursor: pointer;
-}
-.modal-title {
-  margin-bottom: 0.5em;
-}
-
-/*
-  Keyframe animations
-*/
 @keyframes slideUp {
   from {
     transform: translateY(100%);
@@ -248,22 +214,22 @@ h1 {
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
-  background-color: var(--color-gray-900);
+  background-color: var(--color-light-gray);
   border-radius: 5px;
   font-size: 1.25rem;
 }
 
 .key.correct {
-  background-color: var(--color-success);
-  color: white;
+  background-color: var(--color-green);
+  color: black;
 }
 
 .key.incorrect {
-  background-color: var(--color-gray-300);
-  color: white;
+  background-color: var(--color-gray);
+  color: black;
 }
 
 .key.misplaced {
-  background-color: var(--color-warning);
-  color: white;
+  background-color: var(--color-blue);
+  color: var(--color-red);
 }

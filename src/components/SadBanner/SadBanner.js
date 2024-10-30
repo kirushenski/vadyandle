@@ -4,7 +4,7 @@ import Banner from '../Banner'
 function SadBanner({ answer, handleRestart }) {
   return (
     <Banner status="sad" handleRestart={handleRestart}>
-      Cорре, нужно было отвечать <strong>{answer}</strong> 🤷🏿‍♂️
+      В другой раз повезёт! Правильный ответ: <strong>{answer}</strong> 🤷🏿‍♂️
     </Banner>
   )
 }

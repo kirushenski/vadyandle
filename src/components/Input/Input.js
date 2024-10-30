@@ -28,7 +28,7 @@ function Input({ setGuesses, isEnd }) {
 
   return (
     <form className="guess-input-wrapper" onSubmit={handleSubmit}>
-      <label htmlFor="guess-input">Вводи сюда:</label>
+      <label htmlFor="guess-input">Введи слово:</label>
       <input
         id="guess-input"
         type="text"

@@ -23,13 +23,13 @@ const useGuesses = (answer) => {
   return { validatedGuesses, setGuesses, guessesCount, isHappy, isSad, isEnd }
 }
 function Game() {
-  const [answer, setAnswer] = useState(() => sample(WORDS).value)
+  const [answer, setAnswer] = useState(() => sample(WORDS))
 
   const { validatedGuesses, setGuesses, guessesCount, isHappy, isSad, isEnd } =
     useGuesses(answer)
 
   const handleRestart = () => {
-    setAnswer(sample(WORDS).value)
+    setAnswer(sample(WORDS))
     setGuesses([])
   }
 

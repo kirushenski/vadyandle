@@ -4,7 +4,7 @@ import Banner from '../Banner'
 function HappyBanner({ guessesCount, handleRestart }) {
   return (
     <Banner status="happy" handleRestart={handleRestart}>
-      <strong>Молорик!</strong> Отгадал с{' '}
+      Поздравляю! Отгадал с{' '}
       <strong>
         {guessesCount} {guessesCount === 1 ? 'попытки' : 'попыток'}
       </strong>
